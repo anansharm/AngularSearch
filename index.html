@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Simple Search functionality in Angular</title>
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    </head>
+    <body ng-app="instantsearch" class = "maincontainer">
+        <div ng-controller="searchNowCtrl" class="mainbox">
+          <div class = "topbox">
+            <input type="search" class="search" ng-model="searchString" placeholder="Enter your search" />
+          </div>
+
+            <div >
+                <div ng-show='searchString' ng-repeat="i in items | searchFor:searchString" class="displaydata" ng-style="{'border-color': getTrColor(i.gender)}">
+                    <h3>{{i.name}}</h3>
+                    <p>Age: {{i.id}}</p>
+                    <p>City: {{i.city}}</p>
+                </div>
+            </div>
+
+        </div>
+    </body>
+    <script src="js/main.js"></script>
+</html>
